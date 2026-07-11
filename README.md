@@ -5,7 +5,10 @@
 ## 📑 Executive Summary
 WAL-XRay is a custom memory-mapping and database forensic suite engineered to audit client-side data leakage in native Windows (UWP/WinUI) messaging environments. 
 
-This research successfully reverse-engineered the platform’s proprietary local storage mechanics, demonstrating how server-side privacy controls (deleted messages, timeline of edited messages, view-once media, ephemeral statuses, and live reaction histories) could be bypassed by extracting "ghost data" directly from active SQLite Write-Ahead Logs (`.db-wal`).
+This research successfully reverse-engineered the platform’s proprietary local storage mechanics, demonstrating how server-side privacy controls could be bypassed by extracting "ghost data" directly from active SQLite Write-Ahead Logs (`.db-wal`).
+
+🚨 **[READ THE FULL SECURITY IMPACT ANALYSIS HERE](./Security_Impact_Analysis.md)** 🚨  
+*Details the complete scope of the findings, including the recovery of deleted messages, invisible status viewing, ephemeral media (View Once) thumbnail extraction, and exact reaction/edit timelines.*
 
 *⚠️ **Responsible Disclosure Note:** This tool has been refactored into a command-line forensic framework. Hardcoded targets and keys have been removed to prevent weaponization. The vendor has since migrated to a WebView2 architecture, indirectly deprecating the native framework audited in this repository. The author assumes no liability and is not responsible for any unethical or unauthorized usage of this forensic toolset.*
 
@@ -25,7 +28,7 @@ python wal_forensic_parser.py --wal "C:\path\to\messages.db-wal" --key "<64-char
 
 ---
 
-## 🔐 Data Privacy & PII Compliance (`/diagnostic-tools`)
+## 🔐 Data Privacy & PII Compliance (`/data-privacy-compliance`)
 
 A critical component of this forensic research was ensuring the safe handling of intercepted Personally Identifiable Information (PII) and the systematic sanitization of extracted databases.
 
@@ -35,9 +38,6 @@ A critical component of this forensic research was ensuring the safe handling of
 * **`log_cleaner.py`**: A data sanitization pipeline designed to deduplicate transient database events and strip metadata noise. It generates cryptographic signatures for each structural frame to drop redundant telemetry blocks safely.
 
 
-* **`remove_events.py`**: A modular telemetry filtering engine. It operates via CLI to execute logical AND/OR evaluations and RegEx pattern matching, systematically stripping background network noise, system header fragments, and automated handshakes from the working dataset.
-
-
 
 ---
 
@@ -45,6 +45,9 @@ A critical component of this forensic research was ensuring the safe handling of
 
 Prior to building the core engine, the database architecture was blindly reverse-engineered using custom diagnostic scripts designed to probe, map, and classify unknown binary structures.
 
+* **`remove_events.py`**: A modular telemetry filtering engine. It operates via CLI to execute logical AND/OR evaluations and RegEx pattern matching, systematically stripping background network noise, system header fragments, and automated handshakes from the working dataset.
+
+  
 * **`wal_universal_mapper.py`**: A heavy-duty discovery scanner. It blindly maps any SQLite WAL file, iteratively guessing data types across all columns, and recursively decodes unknown Protobuf structures (wire types 0, 1, 2, 5) to generate a raw Schema Blueprint.
 
 
