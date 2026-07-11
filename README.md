@@ -19,12 +19,6 @@ Instead of relying on standard SQLite libraries, this framework was orchestrated
 
 * **`wal_forensic_parser.py`**: The primary targeted interception engine. It utilizes Windows API shared handles to blindly ingest the `.db-wal` file from active RAM. It actively decrypts AES-OFB frames, parses variable integers (Varints) at the byte level, and extracts live telemetry into a structured database without triggering OS file-lock race conditions.
 
-### Usage
-The engine requires the user to supply their own target database and DP-API extracted AES-OFB key.
-```bash
-python wal_forensic_parser.py --wal "C:\path\to\messages.db-wal" --key "<64-character-hex-key>"
-
-```
 
 ---
 
@@ -102,3 +96,35 @@ To maintain strict ethical boundaries, no raw `.db` or `.wal` files are included
 In early 2026, the vendor addressed these local data leakage issues by deprecating the native UWP framework entirely and shifting to a Chromium-based WebView2 wrapper.
 
 While this transition successfully closed the `.db-wal` interception vector by migrating data handling to browser-based storage (IndexedDB), it bypassed the structural flaw rather than resolving the native SQLite implementation. This mitigation strategy resulted in a heavier, online-dependent application, sacrificing raw OS performance and degrading offline capabilities to maintain a unified codebase.
+
+
+
+---
+
+## 📥 Installation & Setup
+
+**1. Clone the repository and navigate to the core engine:**
+```bash
+git clone https://github.com/rahimgujjar/WhatsApp-WAL-XRay.git
+cd WhatsApp-WAL-XRay/core-engine
+
+```
+
+**2. Install required cryptographic and system dependencies:**
+
+```bash
+pip install -r requirements.txt
+
+```
+
+### 🚀 Usage
+
+The engine requires the user to supply their own target database and DP-API extracted AES-OFB key.
+
+```bash
+python wal_forensic_parser.py --wal "C:\path\to\messages.db-wal" --key "<64-character-hex-key>"
+
+```
+
+
+---
