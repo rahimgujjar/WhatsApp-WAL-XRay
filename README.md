@@ -15,9 +15,9 @@ This research successfully reverse-engineered the platform’s proprietary local
 ---
 
 ## 🏗️ Systems Architecture & Core Engine (`/core-engine`)
-Instead of relying on standard SQLite libraries, this framework was orchestrated from first principles using AI-assisted development to construct a low-level, deterministic binary parser[cite: 17]. 
+Instead of relying on standard SQLite libraries, this framework was orchestrated from first principles using AI-assisted development to construct a low-level, deterministic binary parser. 
 
-* **`wal_forensic_parser.py`**: The primary targeted interception engine[cite: 17]. It utilizes Windows API shared handles to blindly ingest the `.db-wal` file from active RAM. It actively decrypts AES-OFB frames, parses variable integers (Varints) at the byte level, and extracts live telemetry into a structured database without triggering OS file-lock race conditions.
+* **`wal_forensic_parser.py`**: The primary targeted interception engine. It utilizes Windows API shared handles to blindly ingest the `.db-wal` file from active RAM. It actively decrypts AES-OFB frames, parses variable integers (Varints) at the byte level, and extracts live telemetry into a structured database without triggering OS file-lock race conditions.
 
 ### Usage
 The engine requires the user to supply their own target database and DP-API extracted AES-OFB key.
