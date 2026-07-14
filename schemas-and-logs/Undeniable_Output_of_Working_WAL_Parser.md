@@ -1,4 +1,4 @@
-# Raw Evidence & Parser Output [Proof-of-Concept]
+# Raw Evidence & Parser Output [Proof-of-Work]
 
 ## DISCLAIMER:
 This file contains synthetic, sanitized telemetry extracted via the WAL-XRay
@@ -17,9 +17,11 @@ accuracy.
 This export serves as undeniable proof-of-work, demonstrating the engine's ability
 to blindly memory-map transient `.db-wal` frames, decode variable integers, and
 extract nested Protobuf architectures in real-time before OS-level checkpoints occur.
-=========================================================================================
 
-[EVENT] Time: 16:56:03.525 | Page: 26584 | RowID: 6175
+***
+
+### [EVENT] Time: 16:56:03.525 | Page: 26584 | RowID: 6175
+```
    Col 1: 120363183762064855@g.us
    Col 2: 0
    Col 3: AC76B81CCF99EE40AF2037FB8F46E06A
@@ -54,8 +56,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 51: 😢👍
    Col 52: 2
-
-[EVENT] Time: 14:47:02.652 | Page: 26584 | RowID: 6175
+```
+### [EVENT] Time: 14:47:02.652 | Page: 26584 | RowID: 6175
+```
    Col 1: 120363183762064855@g.us
    Col 2: 0
    Col 3: AC76B81CCF99EE40AF2037FB8F46E06A
@@ -86,8 +89,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 51: 0
    Col 52: 0
-
-[EVENT] Time: 16:50:45.766 | Page: 26584 | RowID: 6175
+```
+### [EVENT] Time: 16:50:45.766 | Page: 26584 | RowID: 6175
+```
    Col 1: 120363183762064855@g.us
    Col 2: 0
    Col 3: AC76B81CCF99EE40AF2037FB8F46E06A
@@ -118,8 +122,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 51: 0
    Col 52: 0
-
-[EVENT] Time: 14:14:43.399 | Page: 30263 | RowID: 10175
+```
+### [EVENT] Time: 14:14:43.399 | Page: 30263 | RowID: 10175
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A548E3E079C8A4130C1BAB525C96D8C8
@@ -147,8 +152,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 16:01:43.044 | Page: 30138 | RowID: 10182
+```
+### [EVENT] Time: 16:01:43.044 | Page: 30138 | RowID: 10182
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A53A27A824430FC28750C016D84DBC6C
@@ -173,8 +179,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:47:07.246 | Page: 30138 | RowID: 10181
+```
+### [EVENT] Time: 15:47:07.246 | Page: 30138 | RowID: 10181
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A5DCDE0D6F24F8550A398135F3BFF87B
@@ -199,8 +206,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 15:47:38.734 | Page: 30138 | RowID: 10181
+```
+### [EVENT] Time: 15:47:38.734 | Page: 30138 | RowID: 10181
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A5DCDE0D6F24F8550A398135F3BFF87B
@@ -226,8 +234,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 15:16:23.981 | Page: 30138 | RowID: 10183
+```
+### [EVENT] Time: 15:16:23.981 | Page: 30138 | RowID: 10183
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A5FDDEAA395EEC71B1D48A2FA202566B
@@ -250,8 +259,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 44: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 15:49:17.863 | Page: 30094 | RowID: 9698
+```
+### [EVENT] Time: 15:49:17.863 | Page: 30094 | RowID: 9698
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A58D41F7B713226A70D766FAE1D770B4
@@ -276,8 +286,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 16:49:19.378 | Page: 30138 | RowID: 10181
+```
+### [EVENT] Time: 16:49:19.378 | Page: 30138 | RowID: 10181
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A5DCDE0D6F24F8550A398135F3BFF87B
@@ -302,8 +313,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 16:57:58.160 | Page: 30138 | RowID: 10182
+```
+### [EVENT] Time: 16:57:58.160 | Page: 30138 | RowID: 10182
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A53A27A824430FC28750C016D84DBC6C
@@ -329,8 +341,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 16:49:30.958 | Page: 30138 | RowID: 10182
+```
+### [EVENT] Time: 16:49:30.958 | Page: 30138 | RowID: 10182
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A53A27A824430FC28750C016D84DBC6C
@@ -356,8 +369,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 16:59:28.637 | Page: 30138 | RowID: 10182
+```
+### [EVENT] Time: 16:59:28.637 | Page: 30138 | RowID: 10182
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A53A27A824430FC28750C016D84DBC6C
@@ -382,8 +396,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 16:34:58.788 | Page: 30138 | RowID: 10182
+```
+### [EVENT] Time: 16:34:58.788 | Page: 30138 | RowID: 10182
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A53A27A824430FC28750C016D84DBC6C
@@ -408,8 +423,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 14:47:13.758 | Page: 30263 | RowID: 10176
+```
+### [EVENT] Time: 14:47:13.758 | Page: 30263 | RowID: 10176
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A53B7F9D76805EAED4CFFF0E79686311
@@ -438,8 +454,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 16:52:12.191 | Page: 30263 | RowID: 10176
+```
+### [EVENT] Time: 16:52:12.191 | Page: 30263 | RowID: 10176
+```
    Col 1: 155834935959676@lid
    Col 2: 0
    Col 3: A53B7F9D76805EAED4CFFF0E79686311
@@ -467,8 +484,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 155834935959676@lid
-
-[EVENT] Time: 15:20:06.751 | Page: 29724 | RowID: 8936
+```
+### [EVENT] Time: 15:20:06.751 | Page: 29724 | RowID: 8936
+```
    Col 1: 120363400531513549@g.us
    Col 2: 0
    Col 3: AC3F364AB801AD7BC76F1D985EE7A1E4
@@ -500,8 +518,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:34:40.007 | Page: 29724 | RowID: 8936
+```
+### [EVENT] Time: 15:34:40.007 | Page: 29724 | RowID: 8936
+```
    Col 1: 120363400531513549@g.us
    Col 2: 0
    Col 3: AC3F364AB801AD7BC76F1D985EE7A1E4
@@ -531,8 +550,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 16:16:15.138 | Page: 29724 | RowID: 8936
+```
+### [EVENT] Time: 16:16:15.138 | Page: 29724 | RowID: 8936
+```
    Col 1: 120363400531513549@g.us
    Col 2: 0
    Col 3: AC3F364AB801AD7BC76F1D985EE7A1E4
@@ -562,9 +582,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-
-[EVENT] Time: 14:43:36.687 | Page: 29848 | RowID: 10166
+```
+### [EVENT] Time: 14:43:36.687 | Page: 29848 | RowID: 10166
+```
    Col 1: 280784057462786@lid
    Col 2: 0
    Col 3: ACBA8E3553D475FD91EEC0DCEEAA410B
@@ -596,8 +616,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 280784057462786@lid
-
-[EVENT] Time: 14:07:29.831 | Page: 29848 | RowID: 10166
+```
+### [EVENT] Time: 14:07:29.831 | Page: 29848 | RowID: 10166
+```
    Col 1: 280784057462786@lid
    Col 2: 0
    Col 3: ACBA8E3553D475FD91EEC0DCEEAA410B
@@ -625,8 +646,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 52: 0
    Col 54: 280784057462786@lid
-
-[EVENT] Time: 15:25:29.643 | Page: 29260 | RowID: 6114
+```
+### [EVENT] Time: 15:25:29.643 | Page: 29260 | RowID: 6114
+```
    Col 1: 10446
    Col 2: 239049558216809@lid
    Col 3: 1
@@ -636,8 +658,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC153E0FCE5C0A8978E8B16588E5B2D1
    Col 10: 🆘
    Col 11: 1764776881182
-
-[EVENT] Time: 15:39:46.160 | Page: 29260 | RowID: 6110
+```
+### [EVENT] Time: 15:39:46.160 | Page: 29260 | RowID: 6110
+```
    Col 1: 10446
    Col 2: 239049558216809@lid
    Col 3: 0
@@ -647,8 +670,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC153E0FCE5C0A8978E8B16588E5B2D1
    Col 10: 😂
    Col 11: 1764776881182
-
-[EVENT] Time: 14:45:28.935 | Page: 29260 | RowID: 6111
+```
+### [EVENT] Time: 14:45:28.935 | Page: 29260 | RowID: 6111
+```
    Col 1: 10448
    Col 2: 239049558216809@lid
    Col 3: 0
@@ -658,8 +682,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC649549C1D37D27F6A70F7955642733
    Col 10: 😹
    Col 11: 1764776934957
-
-[EVENT] Time: 16:20:04.783 | Page: 29260 | RowID: 6112
+```
+### [EVENT] Time: 16:20:04.783 | Page: 29260 | RowID: 6112
+```
    Col 1: 10449
    Col 2: 239049558216809@lid
    Col 3: 0
@@ -669,8 +694,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC83EE2E13AFD600E015BC7B6777466F
    Col 10: 😹
    Col 11: 1764776927029
-
-[EVENT] Time: 14:30:05.342 | Page: 29260 | RowID: 6113
+```
+### [EVENT] Time: 14:30:05.342 | Page: 29260 | RowID: 6113
+```
    Col 1: 10449
    Col 2: 239049558216809@lid
    Col 3: 1
@@ -680,8 +706,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC83EE2E13AFD600E015BC7B6777466F
    Col 10: 💢
    Col 11: 1764776945115
-
-[EVENT] Time: 16:01:15.860 | Page: 30022 | RowID: 6025
+```
+### [EVENT] Time: 16:01:15.860 | Page: 30022 | RowID: 6025
+```
    Col 1: 9618
    Col 2: 120363406995998132@g.us
    Col 3: 1
@@ -692,8 +719,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 9: 146428437495959@lid
    Col 10: 😁
    Col 11: 1764779624269
-
-[EVENT] Time: 14:01:13.132 | Page: 30022 | RowID: 6026
+```
+### [EVENT] Time: 14:01:13.132 | Page: 30022 | RowID: 6026
+```
    Col 1: 9640
    Col 2: 120363406995998132@g.us
    Col 3: 0
@@ -705,8 +733,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 9: 146428437495959@lid
    Col 10: 👍🏻
    Col 11: 1764772663242
-
-[EVENT] Time: 16:20:40.478 | Page: 30097 | RowID: 6033
+```
+### [EVENT] Time: 16:20:40.478 | Page: 30097 | RowID: 6033
+```
    Col 1: 9655
    Col 2: 120363406995998132@g.us
    Col 3: 0
@@ -718,8 +747,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 9: 146428437495959@lid
    Col 10: 👍
    Col 11: 1764779157815
-
-[EVENT] Time: 16:47:15.910 | Page: 30097 | RowID: 6039
+```
+### [EVENT] Time: 16:47:15.910 | Page: 30097 | RowID: 6039
+```
    Col 1: 9691
    Col 2: 120363393869517850@g.us
    Col 3: 0
@@ -730,8 +760,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 8: 154146426626124@lid
    Col 10: 🫡
    Col 11: 1764779591310
-
-[EVENT] Time: 14:19:24.557 | Page: 30097 | RowID: 6040
+```
+### [EVENT] Time: 14:19:24.557 | Page: 30097 | RowID: 6040
+```
    Col 1: 9691
    Col 2: 120363393869517850@g.us
    Col 3: 1
@@ -741,8 +772,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: 3FDBE7202B1085527200
    Col 10: 👍
    Col 11: 1764779601633
-
-[EVENT] Time: 16:28:51.460 | Page: 29640 | RowID: 6121
+```
+### [EVENT] Time: 16:28:51.460 | Page: 29640 | RowID: 6121
+```
    Col 1: 10462
    Col 2: 244744936493106@lid
    Col 3: 1
@@ -752,8 +784,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC9448B66C567728BD8D5EFA935CB4CB
    Col 10: 🦧
    Col 11: 1764779932124
-
-[EVENT] Time: 16:42:28.018 | Page: 29640 | RowID: 6119
+```
+### [EVENT] Time: 16:42:28.018 | Page: 29640 | RowID: 6119
+```
    Col 1: 10462
    Col 2: 244744936493106@lid
    Col 3: 0
@@ -763,8 +796,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC9448B66C567728BD8D5EFA935CB4CB
    Col 10: 🚌
    Col 11: 1764779941244
-
-[EVENT] Time: 15:36:13.903 | Page: 29640 | RowID: 6120
+```
+### [EVENT] Time: 15:36:13.903 | Page: 29640 | RowID: 6120
+```
    Col 1: 10464
    Col 2: 244744936493106@lid
    Col 3: 1
@@ -774,8 +808,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: 3F32FC0E97A217F289BD
    Col 10: 🛰️
    Col 11: 1764779907107
-
-[EVENT] Time: 14:46:01.596 | Page: 29640 | RowID: 6122
+```
+### [EVENT] Time: 14:46:01.596 | Page: 29640 | RowID: 6122
+```
    Col 1: 10464
    Col 2: 244744936493106@lid
    Col 3: 0
@@ -785,8 +820,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: 3F32FC0E97A217F289BD
    Col 10: 🔤
    Col 11: 1764779963602
-
-[EVENT] Time: 15:52:59.602 | Page: 29274 | RowID: 10527
+```
+### [EVENT] Time: 15:52:59.602 | Page: 29274 | RowID: 10527
+```
    Col 1: status@broadcast
    Col 2: 0
    Col 3: A53A1970BF43B48B418E07B2EFDB096D
@@ -816,8 +852,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 16:52:59.467 | Page: 29278 | RowID: 6058
+```
+### [EVENT] Time: 16:52:59.467 | Page: 29278 | RowID: 6058
+```
    Col 1: 10527
    Col 2: status@broadcast
    Col 3: 1
@@ -829,8 +866,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 9: 923489076556@s.whatsapp.net
    Col 10: 💚
    Col 11: 1764777362430
-
-[EVENT] Time: 15:33:24.021 | Page: 29290 | RowID: 10527
+```
+### [EVENT] Time: 15:33:24.021 | Page: 29290 | RowID: 10527
+```
    Col 1: status@broadcast
    Col 2: 0
    Col 3: A53A1970BF43B48B418E07B2EFDB096D
@@ -861,8 +899,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 51: 💚
    Col 52: 1
-
-[EVENT] Time: 16:46:59.842 | Page: 29270 | RowID: 6123
+```
+### [EVENT] Time: 16:46:59.842 | Page: 29270 | RowID: 6123
+```
    Col 1: 10493
    Col 2: status@broadcast
    Col 3: 0
@@ -873,8 +912,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 8: 923489076556@s.whatsapp.net
    Col 10: 💚
    Col 11: 1764781178779
-
-[EVENT] Time: 14:05:33.136 | Page: 29275 | RowID: 10493
+```
+### [EVENT] Time: 14:05:33.136 | Page: 29275 | RowID: 10493
+```
    Col 1: status@broadcast
    Col 2: 0
    Col 3: AC3E83649AF62E18E073D55E9BF92813
@@ -900,8 +940,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 50: 0
    Col 51: 💚
    Col 52: 1
-
-[EVENT] Time: 15:05:08.779 | Page: 29280 | RowID: 6124
+```
+### [EVENT] Time: 15:05:08.779 | Page: 29280 | RowID: 6124
+```
    Col 1: 10493
    Col 2: status@broadcast
    Col 3: 0
@@ -911,8 +952,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 7: AC3E83649AF62E18E073D55E9BF92813
    Col 8: 923489076556@s.whatsapp.net
    Col 11: 1764781194968
-
-[EVENT] Time: 16:43:43.203 | Page: 29285 | RowID: 10493
+```
+### [EVENT] Time: 16:43:43.203 | Page: 29285 | RowID: 10493
+```
    Col 1: status@broadcast
    Col 2: 0
    Col 3: AC3E83649AF62E18E073D55E9BF92813
@@ -937,8 +979,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:14:55.925 | Page: 30374 | RowID: 10522
+```
+### [EVENT] Time: 15:14:55.925 | Page: 30374 | RowID: 10522
+```
    Col 1: status@broadcast
    Col 2: 0
    Col 3: A5DB515949D6E346EE818D10347CC87C
@@ -972,8 +1015,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 55: /v/t62.36147-24/561766452_1251000016924903_1453441803908797759_n.enc?ccb=11-4&oh=01_Q5Aa3gGKKSJI4coEfUq0GurX8RpDikTCFKXheIDprhVQwSD1iA&oe=698C08C5&_nc_sid=5e03e0
    Col 56: <BLOB len=32>
    Col 57: <BLOB len=32>
-
-[EVENT] Time: 16:24:21.616 | Page: 29262 | RowID: 10193
+```
+### [EVENT] Time: 16:24:21.616 | Page: 29262 | RowID: 10193
+```
    Col 1: 120363405979135311@g.us
    Col 2: 1
    Col 3: AC9DF887BD4A1759610E2ADD8ACFFB94
@@ -996,8 +1040,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 44: 0
    Col 52: 0
    Col 53: 155834935959676@lid
-
-[EVENT] Time: 14:16:17.962 | Page: 29262 | RowID: 10193
+```
+### [EVENT] Time: 14:16:17.962 | Page: 29262 | RowID: 10193
+```
    Col 1: 120363405979135311@g.us
    Col 2: 1
    Col 3: A589A77FC1571BAE5044C84E735AB895
@@ -1020,8 +1065,9 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 43: 0
    Col 44: 0
    Col 52: 0
-
-[EVENT] Time: 16:07:10.962 | Page: 30386 | RowID: 10554
+```
+### [EVENT] Time: 16:07:10.962 | Page: 30386 | RowID: 10554
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A5AD1CAEC37D37BF18EDD4BC87D25682
@@ -1030,15 +1076,15 @@ extract nested Protobuf architectures in real-time before OS-level checkpoints o
    Col 8: BEGIN:VCARD
 VERSION:3.0
 N:;;;;
-FN:abrais
-TEL;type=Mobile;waid=923096956078:+92 309 6956078
-X-WA-BIZ-NAME:abrais
+FN:eulin
+TEL;type=Mobile;ufone=923398420665:+92 339 8420665
+X-WA-BIZ-NAME:eulin
 END:VCARD
    Col 11: 1764779047
    Col 16: 4
    Col 17: 0
    Col 18: 0
-   Col 20: abrais
+   Col 20: eulin
    Col 24: 0
    Col 25: 0
    Col 32: 1
@@ -1054,8 +1100,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:21:47.642 | Page: 30386 | RowID: 10554
+```
+### [EVENT] Time: 15:21:47.642 | Page: 30386 | RowID: 10554
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A5AD1CAEC37D37BF18EDD4BC87D25682
@@ -1079,8 +1126,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:16:31.776 | Page: 30388 | RowID: 10558
+```
+### [EVENT] Time: 15:16:31.776 | Page: 30388 | RowID: 10558
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A5FC88EE4FD70A0C39B2CAA91A26B113
@@ -1094,7 +1142,6 @@ END:VCARD
    Col 24: <FLOAT>
    Col 25: <FLOAT>
    Col 27:
-
    Col 32: 3
    Col 34: 0
    Col 35: 0
@@ -1108,8 +1155,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:49:21.495 | Page: 30401 | RowID: 10558
+```
+### [EVENT] Time: 15:49:21.495 | Page: 30401 | RowID: 10558
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A5FC88EE4FD70A0C39B2CAA91A26B113
@@ -1133,8 +1181,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 14:29:20.231 | Page: 30404 | RowID: 10571
+```
+### [EVENT] Time: 14:29:20.231 | Page: 30404 | RowID: 10571
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A52492AD3D6CB97BFDADA9904CD76F41
@@ -1158,8 +1207,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 14:29:41.143 | Page: 121 | RowID: 1
+```
+### [EVENT] Time: 14:29:41.143 | Page: 121 | RowID: 1
+```
    Col 1: 155834935959676@lid
    Col 2: A52492AD3D6CB97BFDADA9904CD76F41
    Col 3: 120363405979135311@g.us
@@ -1172,8 +1222,9 @@ END:VCARD
    Col 10: UK
    Col 12: 0
    Col 13: 0
-
-[EVENT] Time: 15:49:37.297 | Page: 30404 | RowID: 10571
+```
+### [EVENT] Time: 15:49:37.297 | Page: 30404 | RowID: 10571
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A52492AD3D6CB97BFDADA9904CD76F41
@@ -1198,8 +1249,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 16:30:48.967 | Page: 30404 | RowID: 10573
+```
+### [EVENT] Time: 16:30:48.967 | Page: 30404 | RowID: 10573
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A5296341BF19DF62072237BB94136DF7
@@ -1221,8 +1273,9 @@ END:VCARD
    Col 43: 0
    Col 44: 0
    Col 52: 0
-
-[EVENT] Time: 14:54:39.590 | Page: 121 | RowID: 1
+```
+### [EVENT] Time: 14:54:39.590 | Page: 121 | RowID: 1
+```
    Col 1: 155834935959676@lid
    Col 2: A52492AD3D6CB97BFDADA9904CD76F41
    Col 3: 120363405979135311@g.us
@@ -1234,8 +1287,9 @@ END:VCARD
    Col 10: UK
    Col 12: 0
    Col 13: 0
-
-[EVENT] Time: 15:43:56.333 | Page: 30404 | RowID: 10571
+```
+### [EVENT] Time: 15:43:56.333 | Page: 30404 | RowID: 10571
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A52492AD3D6CB97BFDADA9904CD76F41
@@ -1260,8 +1314,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:17:54.102 | Page: 30404 | RowID: 10575
+```
+### [EVENT] Time: 15:17:54.102 | Page: 30404 | RowID: 10575
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A579BF51BECB443D7536CFC1E56A2E48
@@ -1283,8 +1338,9 @@ END:VCARD
    Col 43: 0
    Col 44: 0
    Col 52: 0
-
-[EVENT] Time: 15:23:18.750 | Page: 121 | RowID: 1
+```
+### [EVENT] Time: 15:23:18.750 | Page: 121 | RowID: 1
+```
    Col 1: 155834935959676@lid
    Col 2: A52492AD3D6CB97BFDADA9904CD76F41
    Col 3: 120363405979135311@g.us
@@ -1293,8 +1349,9 @@ END:VCARD
    Col 6: 💀💀💀💀
    Col 8: 1764777600
    Col 9: 1764774000
-
-[EVENT] Time: 15:17:29.625 | Page: 30404 | RowID: 10571
+```
+### [EVENT] Time: 15:17:29.625 | Page: 30404 | RowID: 10571
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A52492AD3D6CB97BFDADA9904CD76F41
@@ -1319,32 +1376,36 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 14:26:48.539 | Page: 130 | RowID: 1
+```
+### [EVENT] Time: 14:26:48.539 | Page: 130 | RowID: 1
+```
    Col 1: 244744936493106@lid
    Col 2: 0
    Col 3: A54C36A09F860C59D18E5A13683FDEFF
    Col 4: 120363405979135311@g.us
    Col 5: 1764777232080
    Col 6: 1
-
-[EVENT] Time: 14:52:05.628 | Page: 130 | RowID: 2
+```
+### [EVENT] Time: 14:52:05.628 | Page: 130 | RowID: 2
+```
    Col 1: 143177466024097@lid
    Col 2: 0
    Col 3: A54C36A09F860C59D18E5A13683FDEFF
    Col 4: 120363405979135311@g.us
    Col 5: 1764777218379
    Col 6: 3
-
-[EVENT] Time: 15:08:08.656 | Page: 130 | RowID: 2
+```
+### [EVENT] Time: 15:08:08.656 | Page: 130 | RowID: 2
+```
    Col 1: 143177466024097@lid
    Col 2: 0
    Col 3: A54C36A09F860C59D18E5A13683FDEFF
    Col 4: 120363405979135311@g.us
    Col 5: 1764777241965
    Col 6: 2
-
-[EVENT] Time: 15:30:36.367 | Page: 30389 | RowID: 10602
+```
+### [EVENT] Time: 15:30:36.367 | Page: 30389 | RowID: 10602
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A51011C5590A8A181C40110E3E68F434
@@ -1370,8 +1431,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 14:53:03.380 | Page: 30343 | RowID: 10602
+```
+### [EVENT] Time: 14:53:03.380 | Page: 30343 | RowID: 10602
+```
    Col 1: 120363405979135311@g.us
    Col 2: 0
    Col 3: A51011C5590A8A181C40110E3E68F434
@@ -1395,8 +1457,9 @@ END:VCARD
    Col 49: 0
    Col 50: 0
    Col 52: 0
-
-[EVENT] Time: 15:19:27.181 | Page: 30316 | RowID: 10372
+```
+### [EVENT] Time: 15:19:27.181 | Page: 30316 | RowID: 10372
+```
    Col 1: 244744936493106@lid
    Col 2: 1
    Col 3: 3F532D17FE05713A4611
@@ -1430,8 +1493,9 @@ END:VCARD
    Col 49: 0
    Col 52: 0
    Col 54: 244744936493106@lid
-
-[EVENT] Time: 14:43:14.900 | Page: 30395 | RowID: 10620
+```
+### [EVENT] Time: 14:43:14.900 | Page: 30395 | RowID: 10620
+```
    Col 1: 244744936493106@lid
    Col 2: 1
    Col 3: 3FD518393E650926AAAB
@@ -1457,8 +1521,9 @@ END:VCARD
    Col 44: 0
    Col 49: 0
    Col 52: 0
-
-[EVENT] Time: 14:07:02.423 | Page: 30395 | RowID: 10620
+```
+### [EVENT] Time: 14:07:02.423 | Page: 30395 | RowID: 10620
+```
    Col 1: 244744936493106@lid
    Col 2: 1
    Col 3: 3FD518393E650926AAAB
@@ -1479,3 +1544,6 @@ END:VCARD
    Col 43: 0
    Col 44: 0
    Col 52: 0
+```
+
+***
