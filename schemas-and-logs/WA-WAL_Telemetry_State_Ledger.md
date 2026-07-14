@@ -10,501 +10,171 @@ By mapping empirical data structures, this blueprint allows researchers to rever
 engineer the underlying application schema—identifying exactly which numeric
 columns govern specific operational states, media routing payloads, and execution
 flags without relying on the vendor's closed-source source code.
-========================================================================================================================
 
-COLUMN 1:
-   PARENT: INTEGER (Raw Number)
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:609; Undeniable_Output_of_Working_WAL_Parser.txt:620; Undeniable_Output_of_Working_WAL_Parser.txt:631
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: BROADCAST STATUS (@broadcast)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:769; Undeniable_Output_of_Working_WAL_Parser.txt:813; Undeniable_Output_of_Working_WAL_Parser.txt:857
-      - CHILD: GROUP JID (@g.us)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:2; Undeniable_Output_of_Working_WAL_Parser.txt:38; Undeniable_Output_of_Working_WAL_Parser.txt:70
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:102; Undeniable_Output_of_Working_WAL_Parser.txt:157; Undeniable_Output_of_Working_WAL_Parser.txt:183
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 2:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:3; Undeniable_Output_of_Working_WAL_Parser.txt:39; Undeniable_Output_of_Working_WAL_Parser.txt:71
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: BROADCAST STATUS (@broadcast)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:801; Undeniable_Output_of_Working_WAL_Parser.txt:846; Undeniable_Output_of_Working_WAL_Parser.txt:885
-      - CHILD: GROUP JID (@g.us)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:665; Undeniable_Output_of_Working_WAL_Parser.txt:677; Undeniable_Output_of_Working_WAL_Parser.txt:690
-      - CHILD: HEX KEY (32 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1143; Undeniable_Output_of_Working_WAL_Parser.txt:1206; Undeniable_Output_of_Working_WAL_Parser.txt:1268
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:610; Undeniable_Output_of_Working_WAL_Parser.txt:621; Undeniable_Output_of_Working_WAL_Parser.txt:632
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 3:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:611; Undeniable_Output_of_Working_WAL_Parser.txt:622; Undeniable_Output_of_Working_WAL_Parser.txt:633
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: GROUP JID (@g.us)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1144; Undeniable_Output_of_Working_WAL_Parser.txt:1207; Undeniable_Output_of_Working_WAL_Parser.txt:1269
-      - CHILD: HEX KEY (20 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1381; Undeniable_Output_of_Working_WAL_Parser.txt:1416; Undeniable_Output_of_Working_WAL_Parser.txt:1443
-      - CHILD: HEX KEY (32 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:4; Undeniable_Output_of_Working_WAL_Parser.txt:40; Undeniable_Output_of_Working_WAL_Parser.txt:72
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 4:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1145; Undeniable_Output_of_Working_WAL_Parser.txt:1208; Undeniable_Output_of_Working_WAL_Parser.txt:1270
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: GROUP JID (@g.us)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1306; Undeniable_Output_of_Working_WAL_Parser.txt:1314; Undeniable_Output_of_Working_WAL_Parser.txt:1322
-      - CHILD: HEX KEY (20 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:717; Undeniable_Output_of_Working_WAL_Parser.txt:739; Undeniable_Output_of_Working_WAL_Parser.txt:761
-      - CHILD: HEX KEY (32 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:612; Undeniable_Output_of_Working_WAL_Parser.txt:623; Undeniable_Output_of_Working_WAL_Parser.txt:634
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:667
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 5:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: TIMESTAMP (Milliseconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1307; Undeniable_Output_of_Working_WAL_Parser.txt:1315; Undeniable_Output_of_Working_WAL_Parser.txt:1323
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: BROADCAST STATUS (@broadcast)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:804; Undeniable_Output_of_Working_WAL_Parser.txt:849; Undeniable_Output_of_Working_WAL_Parser.txt:888
-      - CHILD: GROUP JID (@g.us)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:668; Undeniable_Output_of_Working_WAL_Parser.txt:680; Undeniable_Output_of_Working_WAL_Parser.txt:693
-      - CHILD: HEX KEY (32 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:186; Undeniable_Output_of_Working_WAL_Parser.txt:237; Undeniable_Output_of_Working_WAL_Parser.txt:263
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:613; Undeniable_Output_of_Working_WAL_Parser.txt:624; Undeniable_Output_of_Working_WAL_Parser.txt:635
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1146; Undeniable_Output_of_Working_WAL_Parser.txt:1209; Undeniable_Output_of_Working_WAL_Parser.txt:1271
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 6:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:614; Undeniable_Output_of_Working_WAL_Parser.txt:625; Undeniable_Output_of_Working_WAL_Parser.txt:636
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:41; Undeniable_Output_of_Working_WAL_Parser.txt:5; Undeniable_Output_of_Working_WAL_Parser.txt:73
-   ------------------------------------
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1147; Undeniable_Output_of_Working_WAL_Parser.txt:1210; Undeniable_Output_of_Working_WAL_Parser.txt:1272
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 7:
-   PARENT: TEXT STRING
-      - CHILD: HEX KEY (20 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:708; Undeniable_Output_of_Working_WAL_Parser.txt:720; Undeniable_Output_of_Working_WAL_Parser.txt:753
-      - CHILD: HEX KEY (32 chars)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:615; Undeniable_Output_of_Working_WAL_Parser.txt:626; Undeniable_Output_of_Working_WAL_Parser.txt:637
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:42; Undeniable_Output_of_Working_WAL_Parser.txt:6; Undeniable_Output_of_Working_WAL_Parser.txt:74
-      - CHILD: URL / LINK
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1148; Undeniable_Output_of_Working_WAL_Parser.txt:1211
-      - CHILD: USER JID (@s.whatsapp.net)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:773; Undeniable_Output_of_Working_WAL_Parser.txt:817
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:670; Undeniable_Output_of_Working_WAL_Parser.txt:682; Undeniable_Output_of_Working_WAL_Parser.txt:695
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 8:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: TIMESTAMP (Seconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1149; Undeniable_Output_of_Working_WAL_Parser.txt:1212; Undeniable_Output_of_Working_WAL_Parser.txt:1273
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:683; Undeniable_Output_of_Working_WAL_Parser.txt:696; Undeniable_Output_of_Working_WAL_Parser.txt:709
-      - CHILD: USER JID (@s.whatsapp.net)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:807; Undeniable_Output_of_Working_WAL_Parser.txt:852; Undeniable_Output_of_Working_WAL_Parser.txt:891
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:136; Undeniable_Output_of_Working_WAL_Parser.txt:161; Undeniable_Output_of_Working_WAL_Parser.txt:188
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 9:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=1569>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:774; Undeniable_Output_of_Working_WAL_Parser.txt:818
-      - CHILD: <BLOB len=2373>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1383
-      - CHILD: <BLOB len=2817>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1068
-      - CHILD: <BLOB len=3962>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1332
-      - CHILD: <BLOB len=495>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:551
-      - CHILD: <BLOB len=6131>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1418
-      - CHILD: <BLOB len=617>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:7
-      - CHILD: <BLOB len=845>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:925
-   ------------------------------------
-   PARENT: INTEGER (Raw Number)
-      - CHILD: TIMESTAMP (Seconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1150; Undeniable_Output_of_Working_WAL_Parser.txt:1274
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:671; Undeniable_Output_of_Working_WAL_Parser.txt:684; Undeniable_Output_of_Working_WAL_Parser.txt:697
-      - CHILD: USER JID (@s.whatsapp.net)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:808
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 10:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:616; Undeniable_Output_of_Working_WAL_Parser.txt:627; Undeniable_Output_of_Working_WAL_Parser.txt:638
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 11:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1333; Undeniable_Output_of_Working_WAL_Parser.txt:1419
-      - CHILD: TIMESTAMP (Milliseconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:617; Undeniable_Output_of_Working_WAL_Parser.txt:628; Undeniable_Output_of_Working_WAL_Parser.txt:639
-      - CHILD: TIMESTAMP (Seconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:43; Undeniable_Output_of_Working_WAL_Parser.txt:75; Undeniable_Output_of_Working_WAL_Parser.txt:8
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 12:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1152; Undeniable_Output_of_Working_WAL_Parser.txt:1214
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 13:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1153; Undeniable_Output_of_Working_WAL_Parser.txt:1215
-   ------------------------------------
-   PARENT: TEXT STRING
-      - CHILD: URL / LINK
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:397; Undeniable_Output_of_Working_WAL_Parser.txt:457; Undeniable_Output_of_Working_WAL_Parser.txt:9
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 15:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:10; Undeniable_Output_of_Working_WAL_Parser.txt:44; Undeniable_Output_of_Working_WAL_Parser.txt:76
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 16:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:138; Undeniable_Output_of_Working_WAL_Parser.txt:163; Undeniable_Output_of_Working_WAL_Parser.txt:190
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:11; Undeniable_Output_of_Working_WAL_Parser.txt:45; Undeniable_Output_of_Working_WAL_Parser.txt:77
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 17:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:109; Undeniable_Output_of_Working_WAL_Parser.txt:46; Undeniable_Output_of_Working_WAL_Parser.txt:78
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:12; Undeniable_Output_of_Working_WAL_Parser.txt:400; Undeniable_Output_of_Working_WAL_Parser.txt:460
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 18:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:110; Undeniable_Output_of_Working_WAL_Parser.txt:47; Undeniable_Output_of_Working_WAL_Parser.txt:79
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:13; Undeniable_Output_of_Working_WAL_Parser.txt:401; Undeniable_Output_of_Working_WAL_Parser.txt:461
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 19:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:402; Undeniable_Output_of_Working_WAL_Parser.txt:431
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 20:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1020; Undeniable_Output_of_Working_WAL_Parser.txt:1391
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 21:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=32>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:14; Undeniable_Output_of_Working_WAL_Parser.txt:48; Undeniable_Output_of_Working_WAL_Parser.txt:80
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 22:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:49; Undeniable_Output_of_Working_WAL_Parser.txt:81
-   ------------------------------------
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1393; Undeniable_Output_of_Working_WAL_Parser.txt:15; Undeniable_Output_of_Working_WAL_Parser.txt:933
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 23:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=32>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:16; Undeniable_Output_of_Working_WAL_Parser.txt:50; Undeniable_Output_of_Working_WAL_Parser.txt:82
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 24:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:17; Undeniable_Output_of_Working_WAL_Parser.txt:51; Undeniable_Output_of_Working_WAL_Parser.txt:83
-   ------------------------------------
-   PARENT: REAL
-      - CHILD: <FLOAT>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1073; Undeniable_Output_of_Working_WAL_Parser.txt:1101
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 25:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:18; Undeniable_Output_of_Working_WAL_Parser.txt:52; Undeniable_Output_of_Working_WAL_Parser.txt:84
-   ------------------------------------
-   PARENT: REAL
-      - CHILD: <FLOAT>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1074; Undeniable_Output_of_Working_WAL_Parser.txt:1102
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 26:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:19; Undeniable_Output_of_Working_WAL_Parser.txt:466; Undeniable_Output_of_Working_WAL_Parser.txt:562
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 27:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1075
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 29:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=52>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1427
-      - CHILD: <BLOB len=54>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:20; Undeniable_Output_of_Working_WAL_Parser.txt:53; Undeniable_Output_of_Working_WAL_Parser.txt:85
-      - CHILD: <BLOB len=60>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1398
-      - CHILD: <BLOB len=68>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:966
-      - CHILD: <BLOB len=69>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:990
-      - CHILD: <BLOB len=6>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:467; Undeniable_Output_of_Working_WAL_Parser.txt:498; Undeniable_Output_of_Working_WAL_Parser.txt:529
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 32:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:21; Undeniable_Output_of_Working_WAL_Parser.txt:54; Undeniable_Output_of_Working_WAL_Parser.txt:86
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:785; Undeniable_Output_of_Working_WAL_Parser.txt:829; Undeniable_Output_of_Working_WAL_Parser.txt:868
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 33:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:992
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 34:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:22; Undeniable_Output_of_Working_WAL_Parser.txt:55; Undeniable_Output_of_Working_WAL_Parser.txt:87
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 35:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:23; Undeniable_Output_of_Working_WAL_Parser.txt:56; Undeniable_Output_of_Working_WAL_Parser.txt:88
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 36:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:24; Undeniable_Output_of_Working_WAL_Parser.txt:57; Undeniable_Output_of_Working_WAL_Parser.txt:89
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:198; Undeniable_Output_of_Working_WAL_Parser.txt:302; Undeniable_Output_of_Working_WAL_Parser.txt:329
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 37:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:25; Undeniable_Output_of_Working_WAL_Parser.txt:58; Undeniable_Output_of_Working_WAL_Parser.txt:90
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 38:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=105>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1054
-      - CHILD: <BLOB len=117>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1108
-      - CHILD: <BLOB len=125>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1294; Undeniable_Output_of_Working_WAL_Parser.txt:276
-      - CHILD: <BLOB len=145>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:357; Undeniable_Output_of_Working_WAL_Parser.txt:383
-      - CHILD: <BLOB len=209>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:250
-      - CHILD: <BLOB len=263>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:568; Undeniable_Output_of_Working_WAL_Parser.txt:598
-      - CHILD: <BLOB len=285>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:790; Undeniable_Output_of_Working_WAL_Parser.txt:834
-      - CHILD: <BLOB len=318>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1404; Undeniable_Output_of_Working_WAL_Parser.txt:1433
-      - CHILD: <BLOB len=345>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:473; Undeniable_Output_of_Working_WAL_Parser.txt:504; Undeniable_Output_of_Working_WAL_Parser.txt:535
-      - CHILD: <BLOB len=346>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:412
-      - CHILD: <BLOB len=359>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:943
-      - CHILD: <BLOB len=371>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:120
-      - CHILD: <BLOB len=380>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:441
-      - CHILD: <BLOB len=418>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:26; Undeniable_Output_of_Working_WAL_Parser.txt:59; Undeniable_Output_of_Working_WAL_Parser.txt:91
-      - CHILD: <BLOB len=42>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:226
-      - CHILD: <BLOB len=43>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1198; Undeniable_Output_of_Working_WAL_Parser.txt:1260
-      - CHILD: <BLOB len=4>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1456
-      - CHILD: <BLOB len=53>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1345
-      - CHILD: <BLOB len=59>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:972
-      - CHILD: <BLOB len=71>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1028; Undeniable_Output_of_Working_WAL_Parser.txt:148; Undeniable_Output_of_Working_WAL_Parser.txt:173
-      - CHILD: <BLOB len=79>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:200; Undeniable_Output_of_Working_WAL_Parser.txt:304; Undeniable_Output_of_Working_WAL_Parser.txt:331
-      - CHILD: <BLOB len=80>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:997
-      - CHILD: <BLOB len=89>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1370; Undeniable_Output_of_Working_WAL_Parser.txt:873; Undeniable_Output_of_Working_WAL_Parser.txt:911
-      - CHILD: <BLOB len=91>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1235
-      - CHILD: <BLOB len=93>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1133
-      - CHILD: <BLOB len=99>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1173
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 39:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=307>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:27; Undeniable_Output_of_Working_WAL_Parser.txt:60; Undeniable_Output_of_Working_WAL_Parser.txt:92
-      - CHILD: <BLOB len=310>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:121
-      - CHILD: <BLOB len=378>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:474; Undeniable_Output_of_Working_WAL_Parser.txt:505; Undeniable_Output_of_Working_WAL_Parser.txt:536
-      - CHILD: <BLOB len=507>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:944
-      - CHILD: <BLOB len=536>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:791; Undeniable_Output_of_Working_WAL_Parser.txt:835
-      - CHILD: <BLOB len=581>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:569; Undeniable_Output_of_Working_WAL_Parser.txt:599
-      - CHILD: <BLOB len=89>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:874; Undeniable_Output_of_Working_WAL_Parser.txt:912
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 41:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:1346; Undeniable_Output_of_Working_WAL_Parser.txt:1434; Undeniable_Output_of_Working_WAL_Parser.txt:1457
-      - CHILD: TIMESTAMP (Seconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:28; Undeniable_Output_of_Working_WAL_Parser.txt:61; Undeniable_Output_of_Working_WAL_Parser.txt:93
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 42:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:29; Undeniable_Output_of_Working_WAL_Parser.txt:476; Undeniable_Output_of_Working_WAL_Parser.txt:507
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 43:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:30; Undeniable_Output_of_Working_WAL_Parser.txt:62; Undeniable_Output_of_Working_WAL_Parser.txt:94
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 44:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:124; Undeniable_Output_of_Working_WAL_Parser.txt:151; Undeniable_Output_of_Working_WAL_Parser.txt:176
-      - CHILD: TIMESTAMP (Seconds)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:31; Undeniable_Output_of_Working_WAL_Parser.txt:63; Undeniable_Output_of_Working_WAL_Parser.txt:95
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 49:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:32; Undeniable_Output_of_Working_WAL_Parser.txt:64; Undeniable_Output_of_Working_WAL_Parser.txt:96
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 50:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:33; Undeniable_Output_of_Working_WAL_Parser.txt:65; Undeniable_Output_of_Working_WAL_Parser.txt:97
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 51:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:66; Undeniable_Output_of_Working_WAL_Parser.txt:98
-   ------------------------------------
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:34; Undeniable_Output_of_Working_WAL_Parser.txt:841; Undeniable_Output_of_Working_WAL_Parser.txt:880
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 52:
-   PARENT: INTEGER (Raw Number)
-      - CHILD: BOOLEAN INT (0/1)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:127; Undeniable_Output_of_Working_WAL_Parser.txt:67; Undeniable_Output_of_Working_WAL_Parser.txt:99
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:35
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 53:
-   PARENT: TEXT STRING
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:977
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 54:
-   PARENT: TEXT STRING
-      - CHILD: LID (@lid)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:128; Undeniable_Output_of_Working_WAL_Parser.txt:180; Undeniable_Output_of_Working_WAL_Parser.txt:207
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 55:
-   PARENT: TEXT STRING
-      - (no child type detected; value classified as parent only)
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:951
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 56:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=32>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:952
-   ------------------------------------
-------------------------------------------------------------
-COLUMN 57:
-   PARENT: BINARY BLOB
-      - CHILD: <BLOB len=32>
-          Examples (file:line): Undeniable_Output_of_Working_WAL_Parser.txt:953
-   ------------------------------------
-------------------------------------------------------------
+***
+
+## SEMANTIC DEFINITION OF SCHEMA TERMS
+To ensure this telemetry analysis is clear, professional, and easily understood, use this guide as a reference for the key terms used in the matrix below:
+
+### 1. Database Mapping Classes
+* **Parent Data Type:** The physical storage layer class identified inside the raw data stream (e.g., `INTEGER`, `TEXT STRING`, `BINARY BLOB`, `REAL`).
+* **Child Classification:** The refined, semantic logic derived by heuristic parser categorization. This identifies the real operational data types encapsulated within the generic database parent types.
+  * **None (Parent only):** No sub-level semantic data structure is present. The value operates solely as a raw literal (e.g., standard flat metadata).
+  * **BOOLEAN INT (0/1):** An integer value constrained strictly to `0` (False/Off) or `1` (True/On), indicating state switches.
+  * **TIMESTAMP:** Integer-encoded temporal milestones. "Seconds" represents 10-digit Unix epoch time, while "Milliseconds" indicates 13-digit high-resolution timing.
+  * **HEX KEY (XX chars):** Cryptographically derived hashes or identifier strings encoded in hexadecimal notation, categorized by fixed character limits.
+  * **URL / LINK:** Standard web addresses or remote platform communication endpoints.
+
+### 2. Specialized Routing Identifiers
+These tags are unique communication nodes parsed from raw strings:
+* **LID (@lid):** Line Identifier, used for account-level routing configurations.
+* **GROUP JID (@g.us):** Jabber Identifier linking directly to WhatsApp Group Chat targets.
+* **USER JID (@s.whatsapp.net):** Jabber Identifier linking directly to unique standard WhatsApp users.
+
+### 3. Binary Structure Lengths
+* **`<BLOB len=X>`:** Raw binary streams representing structured data objects (such as serialized Protocol Buffers/protobufs or specialized application state models). The parsed length `len=X` measures the byte stream footprint. Knowing the exact length is vital for mapping structure pattern consistency.
+
+***
+
+## TELEMETRY CLASSIFICATION MATRIX
+
+| Column Name | Parent Data Type | Child Classification | Example Occurrences (file:line) |
+| :--- | :--- | :--- | :--- |
+| **COLUMN 1** | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:652`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L652)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:664`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L664)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:676`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L676) |
+|  | `TEXT STRING` | `BROADCAST STATUS (@broadcast)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:826`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L826)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:872`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L872)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:918`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L918) |
+|  | `TEXT STRING` | `GROUP JID (@g.us)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:25`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L25)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:62`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L62)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:95`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L95) |
+|  | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:128`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L128)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:185`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L185)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:212`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L212) |
+| **COLUMN 2** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:26`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L26)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:63`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L63)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:96`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L96) |
+|  | `TEXT STRING` | `BROADCAST STATUS (@broadcast)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:859`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L859)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:906`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L906)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:947`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L947) |
+|  | `TEXT STRING` | `GROUP JID (@g.us)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:713`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L713)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:726`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L726)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:740`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L740) |
+|  | `TEXT STRING` | `HEX KEY (32 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1214`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1214)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1280`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1280)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1345`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1345) |
+|  | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:653`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L653)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:665`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L665)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:677`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L677) |
+| **COLUMN 3** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:654`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L654)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:666`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L666)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:678`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L678) |
+|  | `TEXT STRING` | `GROUP JID (@g.us)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1215`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1215)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1281`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1281)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1346`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1346) |
+|  | `TEXT STRING` | `HEX KEY (20 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1465`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1465)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1501`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1501)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1529`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1529) |
+|  | `TEXT STRING` | `HEX KEY (32 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:27`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L27)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:64`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L64)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:97`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L97) |
+| **COLUMN 4** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1216`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1216)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1282`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1282)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1347`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1347) |
+|  | `TEXT STRING` | `GROUP JID (@g.us)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1385`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1385)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1394`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1394)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1403`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1403) |
+|  | `TEXT STRING` | `HEX KEY (20 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:769`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L769)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:793`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L793)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:817`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L817) |
+|  | `TEXT STRING` | `HEX KEY (32 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:655`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L655)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:667`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L667)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:679`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L679) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:715`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L715) |
+| **COLUMN 5** | `INTEGER (Raw Number)` | `TIMESTAMP (Milliseconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1386`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1386)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1395`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1395)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1404`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1404) |
+|  | `TEXT STRING` | `BROADCAST STATUS (@broadcast)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:862`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L862)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:909`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L909)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:950`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L950) |
+|  | `TEXT STRING` | `GROUP JID (@g.us)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:716`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L716)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:729`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L729)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:743`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L743) |
+|  | `TEXT STRING` | `HEX KEY (32 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:215`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L215)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:268`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L268)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:295`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L295) |
+|  | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:656`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L656)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:668`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L668)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:680`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L680) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1217`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1217)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1283`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1283)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1348`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1348) |
+| **COLUMN 6** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:657`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L657)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:669`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L669)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:681`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L681) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:65`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L65)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:28`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L28)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:98`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L98) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1218`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1218)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1284`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1284)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1349`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1349) |
+| **COLUMN 7** | `TEXT STRING` | `HEX KEY (20 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:759`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L759)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:772`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L772)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:808`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L808) |
+|  | `TEXT STRING` | `HEX KEY (32 chars)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:658`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L658)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:670`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L670)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:682`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L682) |
+|  | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:66`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L66)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:29`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L29)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:99`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L99) |
+|  | `TEXT STRING` | `URL / LINK` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1219`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1219)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1285`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1285) |
+|  | `TEXT STRING` | `USER JID (@s.whatsapp.net)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:830`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L830)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:876`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L876) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:718`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L718)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:731`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L731)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:745`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L745) |
+| **COLUMN 8** | `INTEGER (Raw Number)` | `TIMESTAMP (Seconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1220`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1220)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1286`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1286)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1350`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1350) |
+|  | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:732`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L732)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:746`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L746)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:760`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L760) |
+|  | `TEXT STRING` | `USER JID (@s.whatsapp.net)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:865`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L865)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:912`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L912)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:953`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L953) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:163`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L163)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:189`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L189)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:217`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L217) |
+| **COLUMN 9** | `BINARY BLOB` | `<BLOB len=1569>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:831`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L831)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:877`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L877) |
+|  | `BINARY BLOB` | `<BLOB len=2373>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1467`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1467) |
+|  | `BINARY BLOB` | `<BLOB len=2817>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1137`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1137) |
+|  | `BINARY BLOB` | `<BLOB len=3962>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1414`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1414) |
+|  | `BINARY BLOB` | `<BLOB len=495>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:592`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L592) |
+|  | `BINARY BLOB` | `<BLOB len=6131>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1503`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1503) |
+|  | `BINARY BLOB` | `<BLOB len=617>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:30`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L30) |
+|  | `BINARY BLOB` | `<BLOB len=845>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:989`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L989) |
+|  | `INTEGER (Raw Number)` | `TIMESTAMP (Seconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1221`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1221)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1351`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1351) |
+|  | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:719`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L719)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:733`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L733)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:747`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L747) |
+|  | `TEXT STRING` | `USER JID (@s.whatsapp.net)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:866`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L866) |
+| **COLUMN 10** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:659`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L659)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:671`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L671)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:683`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L683) |
+| **COLUMN 11** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1415`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1415)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1504`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1504) |
+|  | `INTEGER (Raw Number)` | `TIMESTAMP (Milliseconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:660`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L660)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:672`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L672)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:684`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L684) |
+|  | `INTEGER (Raw Number)` | `TIMESTAMP (Seconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:67`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L67)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:100`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L100)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:31`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L31) |
+| **COLUMN 12** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1223`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1223)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1288`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1288) |
+| **COLUMN 13** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1224`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1224)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1289`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1289) |
+|  | `TEXT STRING` | `URL / LINK` | • [`Undeniable_Output_of_Working_WAL_Parser.md:434`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L434)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:496`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L496)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:32`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L32) |
+| **COLUMN 15** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:33`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L33)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:68`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L68)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:101`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L101) |
+| **COLUMN 16** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:165`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L165)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:191`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L191)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:219`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L219) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:34`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L34)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:69`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L69)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:102`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L102) |
+| **COLUMN 17** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:135`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L135)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:70`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L70)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:103`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L103) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:35`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L35)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:437`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L437)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:499`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L499) |
+| **COLUMN 18** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:136`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L136)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:71`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L71)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:104`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L104) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:36`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L36)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:438`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L438)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:500`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L500) |
+| **COLUMN 19** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:439`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L439)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:469`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L469) |
+| **COLUMN 20** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1087`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1087)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1475`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1475) |
+| **COLUMN 21** | `BINARY BLOB` | `<BLOB len=32>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:37`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L37)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:72`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L72)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:105`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L105) |
+| **COLUMN 22** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:73`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L73)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:106`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L106) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1477`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1477)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:38`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L38)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:997`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L997) |
+| **COLUMN 23** | `BINARY BLOB` | `<BLOB len=32>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:39`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L39)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:74`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L74)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:107`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L107) |
+| **COLUMN 24** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:40`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L40)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:75`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L75)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:108`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L108) |
+|  | `REAL` | `<FLOAT>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1142`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1142)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1170`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1170) |
+| **COLUMN 25** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:41`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L41)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:76`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L76)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:109`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L109) |
+|  | `REAL` | `<FLOAT>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1143`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1143)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1171`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1171) |
+| **COLUMN 26** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:42`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L42)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:505`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L505)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:603`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L603) |
+| **COLUMN 27** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1144`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1144) |
+| **COLUMN 29** | `BINARY BLOB` | `<BLOB len=52>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1512`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1512) |
+|  | `BINARY BLOB` | `<BLOB len=54>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:43`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L43)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:77`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L77)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:110`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L110) |
+|  | `BINARY BLOB` | `<BLOB len=60>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1482`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1482) |
+|  | `BINARY BLOB` | `<BLOB len=68>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1031`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1031) |
+|  | `BINARY BLOB` | `<BLOB len=69>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1056`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1056) |
+|  | `BINARY BLOB` | `<BLOB len=6>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:506`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L506)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:538`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L538)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:570`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L570) |
+| **COLUMN 32** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:44`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L44)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:78`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L78)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:111`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L111) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:842`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L842)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:888`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L888)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:929`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L929) |
+| **COLUMN 33** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1058`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1058) |
+| **COLUMN 34** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:45`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L45)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:79`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L79)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:112`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L112) |
+| **COLUMN 35** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:46`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L46)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:80`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L80)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:113`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L113) |
+| **COLUMN 36** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:47`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L47)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:81`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L81)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:114`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L114) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:227`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L227)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:335`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L335)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:363`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L363) |
+| **COLUMN 37** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:48`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L48)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:82`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L82)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:115`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L115) |
+| **COLUMN 38** | `BINARY BLOB` | `<BLOB len=105>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1122`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1122) |
+|  | `BINARY BLOB` | `<BLOB len=117>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1177`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1177) |
+|  | `BINARY BLOB` | `<BLOB len=125>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1372`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1372)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:308`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L308) |
+|  | `BINARY BLOB` | `<BLOB len=145>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:392`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L392)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:419`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L419) |
+|  | `BINARY BLOB` | `<BLOB len=209>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:281`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L281) |
+|  | `BINARY BLOB` | `<BLOB len=263>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:609`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L609)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:640`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L640) |
+|  | `BINARY BLOB` | `<BLOB len=285>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:847`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L847)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:893`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L893) |
+|  | `BINARY BLOB` | `<BLOB len=318>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1488`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1488)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1518`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1518) |
+|  | `BINARY BLOB` | `<BLOB len=345>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:512`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L512)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:544`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L544)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:576`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L576) |
+|  | `BINARY BLOB` | `<BLOB len=346>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:449`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L449) |
+|  | `BINARY BLOB` | `<BLOB len=359>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1007`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1007) |
+|  | `BINARY BLOB` | `<BLOB len=371>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:146`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L146) |
+|  | `BINARY BLOB` | `<BLOB len=380>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:479`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L479) |
+|  | `BINARY BLOB` | `<BLOB len=418>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:49`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L49)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:83`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L83)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:116`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L116) |
+|  | `BINARY BLOB` | `<BLOB len=42>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:256`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L256) |
+|  | `BINARY BLOB` | `<BLOB len=43>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1271`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1271)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1336`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1336) |
+|  | `BINARY BLOB` | `<BLOB len=4>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1542`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1542) |
+|  | `BINARY BLOB` | `<BLOB len=53>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1427`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1427) |
+|  | `BINARY BLOB` | `<BLOB len=59>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1037`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1037) |
+|  | `BINARY BLOB` | `<BLOB len=71>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1095`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1095)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:175`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L175)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:201`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L201) |
+|  | `BINARY BLOB` | `<BLOB len=79>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:229`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L229)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:337`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L337)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:365`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L365) |
+|  | `BINARY BLOB` | `<BLOB len=80>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1063`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1063) |
+|  | `BINARY BLOB` | `<BLOB len=89>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1453`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1453)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:934`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L934)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:974`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L974) |
+|  | `BINARY BLOB` | `<BLOB len=91>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1310`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1310) |
+|  | `BINARY BLOB` | `<BLOB len=93>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1203`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1203) |
+|  | `BINARY BLOB` | `<BLOB len=99>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1245`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1245) |
+| **COLUMN 39** | `BINARY BLOB` | `<BLOB len=307>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:50`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L50)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:84`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L84)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:117`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L117) |
+|  | `BINARY BLOB` | `<BLOB len=310>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:147`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L147) |
+|  | `BINARY BLOB` | `<BLOB len=378>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:513`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L513)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:545`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L545)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:577`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L577) |
+|  | `BINARY BLOB` | `<BLOB len=507>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1008`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1008) |
+|  | `BINARY BLOB` | `<BLOB len=536>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:848`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L848)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:894`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L894) |
+|  | `BINARY BLOB` | `<BLOB len=581>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:610`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L610)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:641`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L641) |
+|  | `BINARY BLOB` | `<BLOB len=89>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:935`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L935)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:975`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L975) |
+| **COLUMN 41** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1428`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1428)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1519`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1519)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:1543`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1543) |
+|  | `INTEGER (Raw Number)` | `TIMESTAMP (Seconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:51`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L51)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:85`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L85)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:118`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L118) |
+| **COLUMN 42** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:52`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L52)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:515`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L515)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:547`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L547) |
+| **COLUMN 43** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:53`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L53)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:86`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L86)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:119`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L119) |
+| **COLUMN 44** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:150`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L150)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:178`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L178)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:204`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L204) |
+|  | `INTEGER (Raw Number)` | `TIMESTAMP (Seconds)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:54`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L54)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:87`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L87)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:120`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L120) |
+| **COLUMN 49** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:55`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L55)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:88`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L88)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:121`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L121) |
+| **COLUMN 50** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:56`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L56)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:89`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L89)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:122`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L122) |
+| **COLUMN 51** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:90`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L90)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:123`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L123) |
+|  | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:57`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L57)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:900`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L900)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:941`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L941) |
+| **COLUMN 52** | `INTEGER (Raw Number)` | `BOOLEAN INT (0/1)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:153`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L153)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:91`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L91)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:124`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L124) |
+|  | `INTEGER (Raw Number)` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:58`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L58) |
+| **COLUMN 53** | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1042`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1042) |
+| **COLUMN 54** | `TEXT STRING` | `LID (@lid)` | • [`Undeniable_Output_of_Working_WAL_Parser.md:154`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L154)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:208`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L208)<br>• [`Undeniable_Output_of_Working_WAL_Parser.md:236`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L236) |
+| **COLUMN 55** | `TEXT STRING` | Identity (Same as Parent) | • [`Undeniable_Output_of_Working_WAL_Parser.md:1015`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1015) |
+| **COLUMN 56** | `BINARY BLOB` | `<BLOB len=32>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1016`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1016) |
+| **COLUMN 57** | `BINARY BLOB` | `<BLOB len=32>` | • [`Undeniable_Output_of_Working_WAL_Parser.md:1017`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md?plain=1#L1017) |
