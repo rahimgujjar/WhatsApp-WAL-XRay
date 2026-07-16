@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Carving Ghosts: Reverse-Engineering WhatsApp WAL"
-permalink: /forensic-research-archive/
+permalink: /Forensic-Research-Archive/
 ---
 
 # Reverse-Engineering WhatsApp’s Windows Client: Finding Deleted Messages and View-Once Media in the Write-Ahead Log
