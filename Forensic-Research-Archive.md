@@ -4,7 +4,7 @@ title: "Carving Ghosts: Reverse-Engineering WhatsApp WAL"
 permalink: /Forensic-Research-Archive/
 ---
 
-# Finding :wastebasket: Messages and View-Once Media in WAL
+# Finding ␡ Messages and View-Once Media in WAL
 
 > Security research rarely begins with a grand objective to dismantle a global platform's architecture. It usually starts with a simple, localized annoyance.
 
