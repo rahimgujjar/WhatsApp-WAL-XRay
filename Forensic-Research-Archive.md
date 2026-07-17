@@ -4,21 +4,21 @@ title: "Carving Ghosts: Reverse-Engineering WhatsApp WAL"
 permalink: /Forensic-Research-Archive/
 ---
 
-# Reverse-Engineering WhatsApp’s Windows Client: Finding Deleted Messages and View-Once Media in the Write-Ahead Log
+# Finding :wastebasket: Messages and View-Once Media in WAL
 
-Security research rarely begins with a grand objective to dismantle a global platform's architecture. It usually starts with a simple, localized annoyance.
+> Security research rarely begins with a grand objective to dismantle a global platform's architecture. It usually starts with a simple, localized annoyance.
 
-During my undergraduate studies in Information Technology, a university class representative sent a message to our group chat and immediately deleted it. When asked what the message contained, he flatly refused to tell me. Frustrated and angry, I decided to see if I could recover it myself. I noticed that the native Windows WhatsApp application (the older UWP version) stored files locally on my computer. After some research, I learned that WhatsApp keeps a local database, but it is heavily encrypted using Windows DPAPI (Data Protection API).
+During my undergraduate studies in Information Technology, a university class representative sent a message to our group chat and immediately deleted it. When asked what the message contained, he flatly refused to tell me. Frustrated and angry, I decided to see if I could recover it myself. I noticed that the native Windows WhatsApp application (the older UWP version) stored files locally on my computer. After some research, I learned that WhatsApp keeps a local database, but it is heavily encrypted using **Windows DPAPI (Data Protection API)**.
 
 To bypass the encryption container, I found an open-source tool called ZAPiXDESK, developed by forensic researcher **Alberto Magno** (GitHub: [`kraftdenker`](https://github.com/kraftdenker/ZAPiXDESK/tree/main)). Many thanks to Alberto for making this tool publicly available. I used the tool's PowerShell script (`ZAPiXDESK.ps1`) and its closed-source executable strictly to extract my system's DPAPI key. Once I possessed the decryption key, I configured my own Python environment to handle the database analysis (later building my parser — [`wal_forensic_parser.py`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/core-engine/wal_forensic_parser.py)).
 
-I opened the decrypted `messages.db` file using DB Browser for SQLite and started digging. Luckily, I actually found the class representative's deleted message sitting as a remnant inside a Protobuf column. However, when I tried to repeat the process with other deleted messages, it failed. I realized that finding his message was just a fluke; WhatsApp's main database was inconsistent, and that specific message was just a leftover garbage value. Although, after some time, when I decrypted `messages.db` again, I realized that exact message became invisible. It looked like WhatsApp heals itself, or maybe it was just my *illusion*. Realizing the main database was an unreliable forensic source, I shifted my focus to the physical storage layer: the SQLite Write-Ahead Log (`messages.db-wal`).
+I opened the decrypted `messages.db` file using DB Browser for SQLite and started digging. Luckily, I actually found the class representative's deleted message sitting as a remnant inside a Protobuf column. However, when I tried to repeat the process with other deleted messages, it failed. I realized that finding his message was just a fluke; WhatsApp's main database was inconsistent, and that specific message was just a leftover garbage value. Although, after some time, when I decrypted `messages.db` again, I realized that exact message became invisible. It looked like WhatsApp heals itself, or maybe it was just my *illusion*. Realizing the main database was an unreliable forensic source, I shifted my focus to the physical storage layer: **the SQLite Write-Ahead Log (`messages.db-wal`)**.
 
 ## Volatile Transaction Persistence (The "Sync-and-Store" Flaw)
 
 The WAL file is where SQLite temporarily stores transaction data before merging it into the main database. Because of how WhatsApp's asynchronous synchronization operated across devices, the server would deliver the actual encrypted message payload to my computer before it processed and delivered the subsequent "Delete" command.
 
-This created a Volatile Transaction Persistence flaw. The raw message data was actively written to the physical `.db-wal` file on the local disk. The application's UI would hide the data, but the un-checkpointed memory frames remained completely intact in the log. It simply meant that whenever a message came, I would catch or capture it at exactly that moment, leaving no place to run ✊.
+This created a **Volatile Transaction Persistence** flaw. The raw message data was actively written to the physical `.db-wal` file on the local disk. The application's UI would hide the data, but the un-checkpointed memory frames remained completely intact in the log. It simply meant that whenever a message came, I would catch or capture it at exactly that moment, leaving no place to run ✊.
 
 Since there was no existing tool capable of extracting this messy, transient data in real-time, I engineered a custom Python parser to actively memory-map and decode the SQLite Varints on the fly.
 
