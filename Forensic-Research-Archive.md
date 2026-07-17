@@ -2,6 +2,9 @@
 layout: post
 title: "Carving Ghosts: Reverse-Engineering WhatsApp WAL"
 permalink: /Forensic-Research-Archive/
+status: "Responsible Disclosure"
+research_date: "Oct – Early Dec 2025"
+date: 2026-07-11
 ---
 
 # Finding ␡ Messages & View-Once Media in WAL
