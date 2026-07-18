@@ -5,25 +5,45 @@ permalink: /Forensic-Research-Archive/
 status: "Responsible Disclosure"
 research_date: "Oct – Early Dec 2025"
 date: 2026-07-11
+enable_code_collapse: true
 ---
 
 # Finding ␡ Messages & View-Once Media in WAL
 
 > Security research rarely begins with a grand objective to dismantle a global platform's architecture. It usually starts with a simple, localized annoyance.
 
-During my undergraduate studies in Information Technology, a university class representative sent a message to our group chat and immediately deleted it. When asked what the message contained, he flatly refused to tell me. Frustrated and angry, I decided to see if I could recover it myself. I noticed that the native Windows WhatsApp application (the older UWP version) stored files locally on my computer. After some research, I learned that WhatsApp keeps a local database, but it is heavily encrypted using **Windows DPAPI (Data Protection API)**.
+During my undergraduate studies in Information Technology, a university class representative sent a message to our group chat and immediately deleted it. When asked what the message contained, he flatly refused to tell me. Frustrated and angry, I decided to see if I could recover it myself. 
 
-To bypass the encryption container, I found an open-source tool called ZAPiXDESK, developed by forensic researcher **Alberto Magno** (GitHub: [`kraftdenker`](https://github.com/kraftdenker/ZAPiXDESK/tree/main)). Many thanks to Alberto for making this tool publicly available. I used the tool's PowerShell script (`ZAPiXDESK.ps1`) and its closed-source executable strictly to extract my system's DPAPI key. Once I possessed the decryption key, I configured my own Python environment to handle the database analysis (later building my parser — [`wal_forensic_parser.py`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/core-engine/wal_forensic_parser.py)).
+I noticed that the native Windows WhatsApp application (the older UWP version) stored files locally on my computer. After some research, I learned that WhatsApp keeps a local database, but it is heavily encrypted using **Windows DPAPI (Data Protection API)**.
 
-I opened the decrypted `messages.db` file using DB Browser for SQLite and started digging. Luckily, I actually found the class representative's deleted message sitting as a remnant inside a Protobuf column. However, when I tried to repeat the process with other deleted messages, it failed. I realized that finding his message was just a fluke; WhatsApp's main database was inconsistent, and that specific message was just a leftover garbage value. Although, after some time, when I decrypted `messages.db` again, I realized that exact message became invisible. It looked like WhatsApp heals itself, or maybe it was just my *illusion*. Realizing the main database was an unreliable forensic source, I shifted my focus to the physical storage layer: **the SQLite Write-Ahead Log (`messages.db-wal`)**.
+## Bypassing the DPAPI Encryption Container
+
+To bypass the encryption container, I found an open-source tool called ZAPiXDESK, developed by forensic researcher **Alberto Magno** (GitHub: [`kraftdenker`](https://github.com/kraftdenker/ZAPiXDESK/tree/main)). 
+* Many thanks to Alberto for making this tool publicly available. 
+* I used the tool's PowerShell script (`ZAPiXDESK.ps1`) and its closed-source executable strictly to extract my system's DPAPI key. 
+
+Once I possessed the decryption key, I configured my own Python environment to handle the database analysis (later building my parser — [`wal_forensic_parser.py`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/core-engine/wal_forensic_parser.py)).
+
+## Inconsistencies in Primary Database Storage
+
+I opened the decrypted `messages.db` file using DB Browser for SQLite and started digging. Luckily, I actually found the class representative's deleted message sitting as a remnant inside a Protobuf column. However, when I tried to repeat the process with other deleted messages, it failed. 
+
+I realized that finding his message was just a fluke; WhatsApp's main database was inconsistent, and that specific message was just a leftover garbage value. Although, after some time, when I decrypted `messages.db` again, I realized that exact message became invisible. It looked like WhatsApp heals itself, or maybe it was just my *illusion*. 
+
+**Realizing the main database was an unreliable forensic source, I shifted my focus to the physical storage layer: the SQLite Write-Ahead Log (`messages.db-wal`).**
+
+***
 
 ## Volatile Transaction Persistence (The "Sync-and-Store" Flaw)
 
 The WAL file is where SQLite temporarily stores transaction data before merging it into the main database. Because of how WhatsApp's asynchronous synchronization operated across devices, the server would deliver the actual encrypted message payload to my computer before it processed and delivered the subsequent "Delete" command.
 
-This created a **Volatile Transaction Persistence** flaw. The raw message data was actively written to the physical `.db-wal` file on the local disk. The application's UI would hide the data, but the un-checkpointed memory frames remained completely intact in the log. It simply meant that whenever a message came, I would catch or capture it at exactly that moment, leaving no place to run ✊.
+This created a **Volatile Transaction Persistence** flaw. 
+* The raw message data was actively written to the physical `.db-wal` file on the local disk. 
+* The application's UI would hide the data, but the un-checkpointed memory frames remained completely intact in the log. 
+* It simply meant that whenever a message came, I would catch or capture it at exactly that moment, leaving no place to run ✊.
 
-Since there was no existing tool capable of extracting this messy, transient data in real-time, I engineered a custom Python parser to actively memory-map and decode the SQLite Varints on the fly.
+> Since there was no existing tool capable of extracting this messy, transient data in real-time, I engineered a custom Python parser to actively memory-map and decode the SQLite Varints on the fly.
 
 ## Iterative Engineering & AI Assistance
 
@@ -45,6 +65,8 @@ And the Final Parser:
 
 All of that troubleshooting and iterative work happened before the final script was created. The overall logic, research process, and architecture were my own; I only relied on AI to help write the syntax itself.
 
+***
+
 ## What Could Be Recovered (The Forensic Timeline)
 
 This method provided a forensic-level timeline that standard modified applications (such as GBWhatsApp) generally do not provide, even though they could theoretically implement similar capabilities. While modded APKs are powerful (albeit unofficial and often in violation of WhatsApp's Terms of Service) and can block delete requests based on user preferences, my parser passively reconstructed complete historical states:
@@ -59,13 +81,26 @@ This method provided a forensic-level timeline that standard modified applicatio
 
 - **Limitations:** Full-resolution ephemeral [View-Once disappearing messages] media and audio payloads were not recoverable, as the full high-res files never reached the Windows client architecture.
 
+***
+
 ## The Ephemeral [View-Once] Logic Flaw
 
 While building the parser, I discovered a severe architectural logic flaw regarding ephemeral [View-Once messages] media. Obviously, I couldn't view a View-Once photo on the Windows app, as WhatsApp restricted that feature to mobile devices.
 
-However, if I picked up my phone and simply quoted that unread View-Once message in a standard reply, my phone's local software would generate a low-quality thumbnail of the hidden image and attach it to the reply metadata. The server—most likely acting as a blind router—would then blindly trust that reply packet (thumbnail included) and route it to my Windows desktop. (Note: I am 90% sure this only worked for unread messages. If I quoted it after it was already read, it likely wouldn't work depending on WhatsApp's memory management).
+### The Cross-Device Routing Vulnerability
 
-My parser, along with my [`thumbnail_extract.py`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/diagnostic-tools/thumbnail_extract.py) script, successfully extracted these thumbnails directly from the desktop's WAL logs. As proven by my extracted JSON data, these were extremely low-quality images (ranging from 1.8 KB to 3.5 KB, with resolutions like 45×100 or 55×100). While text was illegible, facial recognition and context were easily identifiable. Crucially, this logical flaw completely bypassed the intended privacy restriction without me ever actually opening the View-Once message at any point in my life 😏😁.
+However, if I picked up my phone and simply quoted that unread View-Once message in a standard reply, my phone's local software would generate a low-quality thumbnail of the hidden image and attach it to the reply metadata. 
+
+**The server—most likely acting as a blind router—would then blindly trust that reply packet (thumbnail included) and route it to my Windows desktop.** 
+*(Note: I am 90% sure this only worked for unread messages. If I quoted it after it was already read, it likely wouldn't work depending on WhatsApp's memory management).*
+
+### Data Extraction & Privacy Bypass
+
+My parser, along with my [`thumbnail_extract.py`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/diagnostic-tools/thumbnail_extract.py) script, successfully extracted these thumbnails directly from the desktop's WAL logs. As proven by my extracted JSON data, these were extremely low-quality images (ranging from 1.8 KB to 3.5 KB, with resolutions like 45×100 or 55×100). 
+
+While text was illegible, facial recognition and context were easily identifiable. **Crucially, this logical flaw completely bypassed the intended privacy restriction without me ever actually opening the View-Once message at any point in my life 😏😁.**
+
+***
 
 ## Undeniable Proof
 
@@ -153,18 +188,35 @@ To prove this wasn't fabricated, here is a sanitized excerpt from my [`Undeniabl
    And Much MORE ...
 ```
 
-## The Threat Perspective (A Passive Shadow Client)
+***
 
-What started as a trick to recover a single message evolved into a highly capable Proof-of-Concept. I utilized my parser to engineer a passive "shadow client" running in the background. Because my script actively intercepted, decrypted, and filtered the raw SQLite I/O streams directly from the disk, it required absolutely zero modifications or reverse-engineering of the official WhatsApp binary.
+## The Threat Perspective: A Passive "Shadow Client"
 
-This is a critical threat vector. Unlike modded applications that actively break code signatures and trigger anti-tamper bans, this approach was completely passive, undetectable (though I won't exaggerate, maybe WhatsApp could discover it), and allowed for the silent 🤫 harvesting of disappearing data and deleted timelines.
+What started as a trick to recover a single message evolved into a **sophisticated forensic data extraction framework**. I utilized my parser to engineer a **passive "shadow client"** running in the background. Because my script actively intercepted, decrypted, and filtered the raw SQLite I/O streams **directly from active RAM—bypassing OS file-lock race conditions**—it required **absolutely zero modifications or reverse-engineering** of the official WhatsApp binary.
+
+This is a critical threat vector for post-exploitation data gathering. Unlike third-party modded applications ***(such as GB WhatsApp or Plus WhatsApp)*** that alter application code and carry a severe risk of account bans, this approach was completely passive. **While it underperforms modded clients in recovering View-Once media** (achieving only a ~40% success rate focused on thumbnails rather than full audio/video), **it completely excels in operational security**. It is **highly stealthy, generating zero network footprint**, and allowed for the covert exfiltration of disappearing data and deleted timelines with **virtually zero risk of an account ban**.
 
 ## Responsible Publication & Final Thoughts
 
-I had no malicious intent with this research. I was never planning to turn this into a commercial tool or sell it. In fact, by the time I completed the research in early 2026, WhatsApp had already replaced the original Windows UWP client with a newer WebView-based client within three to four weeks.
+**This research was driven entirely by technical curiosity, with absolutely no malicious intent or commercial motivation.** By the time I finalized this framework in early 2026, WhatsApp had already begun migrating away from the native UWP client to a **newer WebView2 architecture**.
 
-Technically, I could have published the research soon after that because the original target no longer existed. However, I deliberately waited to ensure that no capable malicious actor could directly misuse my work. Additionally, at that time, I barely had any public online presence. I only created my GitHub profile relatively recently because I was previously busy with personal side projects and never really thought about documenting my work publicly. I never earned any money from this research, nor was I paid or rewarded for it.
+> While I could have published these findings immediately since the target application was effectively obsolete, I deliberately chose to **delay the release**. I wanted to ensure that no malicious actor could weaponize the methodology during the transition period. 
 
-Although this research certainly had the potential for malicious use—and such misuse could have been very serious if someone had turned it into a fully developed tool—that is precisely why responsible publication mattered. The techniques were difficult to detect and, in several areas, provided more detailed forensic insight than existing approaches.
+Furthermore, my focus at the time was purely on private research; I only recently established a public GitHub presence to begin documenting my work for the broader community. It is important to note that this project was **completely independent**—I was never paid, rewarded, or otherwise compensated for this research.
 
-While this particular implementation is no longer practical because the original client has changed, the underlying concept was never the difficult part. Once the relevant data is available, the remaining work becomes comparatively straightforward. The real challenge—and the real vulnerability—was extracting and understanding that data in the first place.
+**The potential for misuse was undeniably significant.** If weaponized into a fully deployed tool with a dedicated user interface, this passive interception framework would have been **incredibly difficult to detect**, offering a deeper, more invasive timeline than conventional forensic approaches **without any risk of an account ban**. That inherent danger is exactly why adhering to responsible publication principles was paramount.
+
+Today, the specific implementation detailed here is no longer viable against current WhatsApp desktop clients. However, the true value of this research never lay in the code itself. 
+* Once the relevant data is accessible, writing the script is comparatively straightforward. 
+* **The real challenge—and the fundamental vulnerability exposed here—was the methodology** required to extract, map, and comprehend that volatile data in the first place.
+
+***
+
+## References
+
+**Due to the highly specific niche of this research, no direct academic or technical references existed detailing data extraction from the SQLite WAL artifacts specifically for the native Windows WhatsApp UWP client (as of my research🙏). Consequently, this entire forensic methodology was developed from scratch. The similar and related references that were found are provided below, serving as peripheral context rather than direct guides:**
+
+* [WhatsApp Desktop and Web Live Forensics (Alberto Magno)](https://medium.com/@alberto.magno/whatsapp-desktop-and-web-live-forensics-4n6-233f640e9fb3)
+* [Python: Opening a file without creating a lock (StackOverflow)](https://stackoverflow.com/questions/14388608/python-opening-a-file-without-creating-a-lock)
+* [bring2lite: Structural Concept & Tool for Forensic Data Analysis & Recovery of ␡ SQLite Records](https://doi.org/10.1016/j.diin.2019.04.017)
+* [Making the Invisible Visible – Techniques for Recovering Deleted SQLite Data Records](https://www.semanticscholar.org/paper/Making-the-Invisible-Visible-%E2%80%93-Techniques-for-Pawlaszczyk-Hummert/c584a7ab6c7870f7cfb7cd2b2d6b38c2f1f41d31)
