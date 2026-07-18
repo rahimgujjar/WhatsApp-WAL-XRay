@@ -67,23 +67,23 @@ All of that troubleshooting and iterative work happened before the final script 
 
 ***
 
-## What Could Be Recovered (The Forensic Timeline)
+## What Could Be Recovered (The Forensic Timeline) 🔍
 
-This method provided a forensic-level timeline that standard modified applications (such as GBWhatsApp) generally do not provide, even though they could theoretically implement similar capabilities. While modded APKs are powerful (albeit unofficial and often in violation of WhatsApp's Terms of Service) and can block delete requests based on user preferences, my parser passively reconstructed complete historical states:
+This method provided a **forensic-level timeline** that standard modified applications (such as GBWhatsApp) generally do not provide, even though they could theoretically implement similar capabilities. While modded APKs are powerful *(albeit unofficial and often in violation of WhatsApp's Terms of Service)* and can block delete requests based on user preferences, my parser **passively reconstructed complete historical states**:
 
-- **Deleted Content:** Full recovery of deleted text messages, documents, audio, video, contact vCards, WhatsApp Business event details, and interactive polls. This included deterministic confusion of poll selections—like exactly who selected which option, how many times it was changed, or removed.
+- **Deleted Content:** Full recovery of deleted text messages, documents, audio, video, contact vCards, WhatsApp Business event details, and interactive polls. This excluded **deterministic tracking of poll selections**—identifying exactly who selected which option, the frequency of changes, or if a vote was removed. Although you can get the exact poll questions and it was theoretically possible, I did not find the exact parsing logic for it, but it is still possible.
 
-- **Status Telemetry:** You could see exactly who liked your status and then unliked it again (like a friend who is no longer your friend, but still cares, or your ex-GF). It even allowed you to watch statuses and skip or view the ads WhatsApp inserted between them without WhatsApp ever knowing that you had viewed them. Although I later discovered that WhatsApp already provides users with a similar feature, this approach was still more effective because WhatsApp itself would never know that you had viewed them.
+- **Status Telemetry:** The ability to precisely track user interactions with status updates, such as identifying when a user viewed or reacted to a status and subsequently withdrew that reaction. It also allowed for the **covert viewing of statuses** and bypassing inserted advertisements without triggering read receipts server-side. While WhatsApp natively offers read-receipt toggles, this method remained entirely invisible to the application *(WhatsApp)* itself.
 
-- **Message Edits:** Capturing the original text, the edited text, and the precise modification timestamps when the exact message was edited, re-edited, and edited again... onward.
+- **Message Edits:** Capturing the **original payload, the edited variations, and precise modification timestamps** across multiple sequential edits.
 
-- **Reaction Histories:** Extracting a millisecond-level timeline of user reactions (e.g., tracking the exact moment a user added an emoji, removed it, and replaced it). This helps you capture bullshitters spamming WhatsApp groups or your DMs by changing or doing vulgar reactions.
+- **Reaction Histories:** Extracting a **millisecond-level timeline of user reactions**, capturing the exact moment a user added, removed, or rapidly replaced emoji reactions (effectively logging spam or inappropriate reaction behavior in groups or direct messages).
 
-- **Limitations:** Full-resolution ephemeral [View-Once disappearing messages] media and audio payloads were not recoverable, as the full high-res files never reached the Windows client architecture.
+- **Limitations:** Full-resolution ephemeral media (View-Once disappearing messages) and audio payloads were not recoverable, as the **high-resolution files never populated within the local Windows client architecture**.
 
 ***
 
-## The Ephemeral [View-Once] Logic Flaw
+## The Ephemeral [View-Once] Logic Flaw ⚠️
 
 While building the parser, I discovered a severe architectural logic flaw regarding ephemeral [View-Once messages] media. Obviously, I couldn't view a View-Once photo on the Windows app, as WhatsApp restricted that feature to mobile devices.
 
@@ -98,11 +98,13 @@ However, if I picked up my phone and simply quoted that unread View-Once message
 
 My parser, along with my [`thumbnail_extract.py`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/diagnostic-tools/thumbnail_extract.py) script, successfully extracted these thumbnails directly from the desktop's WAL logs. As proven by my extracted JSON data, these were extremely low-quality images (ranging from 1.8 KB to 3.5 KB, with resolutions like 45×100 or 55×100). 
 
-While text was illegible, facial recognition and context were easily identifiable. **Crucially, this logical flaw completely bypassed the intended privacy restriction without me ever actually opening the View-Once message at any point in my life 😏😁.**
+While text was illegible, facial recognition and context were easily identifiable. **Crucially, this logical flaw completely bypassed the intended privacy restriction without me ever actually opening the View-Once message at any point in my life😊.**
 
 ***
 
 ## Undeniable Proof
+
+> **Forensic Verification & Reproducibility Notice⚠️⚠️:** The core parsing logic is fully open-source, allowing for rigorous methodological review over baseless speculation. While the raw `messages.db-wal` cannot be published due to strict Personal Identifiable Information (PII) constraints, and the target architecture is now deprecated, the forensic artifacts remain preserved. Serious researchers seeking to verify these claims beyond the repository code may contact me *(gmail: prime.logic05@gmail.com)* for a **controlled, authenticated demonstration** of the extraction process. 
 
 To prove this wasn't fabricated, here is a sanitized excerpt from my [`Undeniable_Output_of_Working_WAL_Parser.md`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md). Notice the raw Protocol Buffer structure, the exact timestamps, and the specific Meta CDN URL signatures (e.g., `oh=01_Q5...`) that authenticate media access:
 
