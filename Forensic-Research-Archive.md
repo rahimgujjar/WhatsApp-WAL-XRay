@@ -187,9 +187,9 @@ To prove this wasn't fabricated, here is a sanitized excerpt from my [`Undeniabl
    Col 17: 0
    Col 18: 0
    Col 21: <BLOB len=32>
-   And much more... To get more Understanding,
-   check out this file on GitHub: [`Undeniable_Output_of_Working_WAL_Parser.md`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md).
+   And much more...
 ```
+> To get more Understanding, check out this file on GitHub: [`Undeniable_Output_of_Working_WAL_Parser.md`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md).
 
 ***
 
@@ -198,6 +198,8 @@ To prove this wasn't fabricated, here is a sanitized excerpt from my [`Undeniabl
 What started as a trick to recover a single message evolved into a **sophisticated forensic data extraction framework**. I utilized my parser to engineer a **passive "shadow client"** running in the background. Because my script actively intercepted, decrypted, and filtered the raw SQLite I/O streams **directly from active RAM—bypassing OS file-lock race conditions**—it required **absolutely zero modifications or reverse-engineering** of the official WhatsApp binary.
 
 This is a critical threat vector for post-exploitation data gathering. Unlike third-party modded applications ***(such as GB WhatsApp or Plus WhatsApp)*** that alter application code and carry a severe risk of account bans, this approach was completely passive. **While it underperforms modded clients in recovering View-Once media** (achieving only a ~40% success rate focused on thumbnails rather than full audio/video), **it completely excels in operational security**. It is **highly stealthy, generating zero network footprint**, and allowed for the covert exfiltration of disappearing data and deleted timelines with **virtually zero risk of an account ban**.
+
+***
 
 ## Responsible Publication & Final Thoughts
 
