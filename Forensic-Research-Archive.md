@@ -187,7 +187,8 @@ To prove this wasn't fabricated, here is a sanitized excerpt from my [`Undeniabl
    Col 17: 0
    Col 18: 0
    Col 21: <BLOB len=32>
-   And Much MORE ...
+   And much more... To get more Understanding,
+   check out this file on GitHub: [`Undeniable_Output_of_Working_WAL_Parser.md`](https://github.com/rahimgujjar/WhatsApp-WAL-XRay/blob/main/schemas-and-logs/Undeniable_Output_of_Working_WAL_Parser.md).
 ```
 
 ***
